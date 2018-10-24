@@ -14,13 +14,10 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: "100px"
-  },
-  dense: {
-    marginTop: 16
-  },
-  menu: {
-    width: 100
+    width: "100px",
+    input: {
+      textAlign: "center"
+    }
   }
 });
 
@@ -32,14 +29,26 @@ class HexQuiz extends React.Component {
 
   componentWillMount = () => {
     let tempArr = [];
+    let number;
     for (let i = 0; i < 9; i++) {
+      number = Math.floor(Math.random() * 15)
+      while(number > 15 || tempArr.some((item)=>{return number === item.num})){
+          number = Math.floor( Math.random() * 15 + 9)
+      }
       tempArr[i] = {
-        num: Math.floor(Math.random() * 15),
-        ans: " "
+        num: number,
+        ans: "  "
       };
     }
     this.setState({ nums: tempArr });
   };
+
+  checkIt(num, guess, index){
+    let tempArr = this.state.nums;
+    if(num === 15 && (guess === "f" || guess ==="F")){
+
+    }
+  }
 
   handleChange = index => event => {
     console.log(event.target.value);
