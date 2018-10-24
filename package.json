@@ -1,6 +1,6 @@
 {
   "title": "Material demo",
-  "description": null,
+  "description": "",
   "dependencies": {
     "react-dom": "latest",
     "react": "latest",
@@ -9,7 +9,7 @@
     "@material-ui/core": "latest"
   },
   "keywords": [],
-  "name": "hex-conversion",
+  "name": "hexgame",
   "version": "0.0.8",
   "devDependencies": {
     "react-scripts": "1.0.0"
