@@ -4,7 +4,6 @@ import babyDucks from "./babyDucks.gif";
 import DoorOne from "./DoorOne.js";
 import DoorTwo from "./DoorTwo.js";
 import DoorThree from "./DoorThree.js";
-import DecToBinary from "./DecToBinary.js";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {

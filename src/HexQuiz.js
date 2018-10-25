@@ -13,7 +13,7 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     marginTop: "100px",
-
+    width: "100%",
     maxWidth: "349px",
     marginRight: "auto",
     marginLeft: "auto",

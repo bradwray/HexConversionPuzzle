@@ -45,6 +45,7 @@ class DoorOne extends React.Component {
     if (this.state.open) {
       this.setState({ open: false });
     }
+    }, 500);
   };
 
   render() {
