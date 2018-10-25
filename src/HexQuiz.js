@@ -1,26 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 
 const styles = theme => ({
   root: {
-    backgroundColor: "#ddd",
     height: 800,
-    width: 800,
-    alignContent: "center"
+    width: 800
   },
   container: {
     display: "flex",
     flexWrap: "wrap",
-    width: "400px"
+    marginTop: "100px",
+    width: "100%",
+    maxWidth: "349px",
+    marginRight: "auto",
+    marginLeft: "auto",
+    backgroundColor: "#eee",
+    borderStyle: "outset",
+    borderWidth: "3px",
+    borderRadius: "5px",
+    padding: "10px 15px 10px 15px"
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: "100px"
+    width: "100px",
+    backgroundColor: "#fff"
   },
   textFieldCorrect: {
     marginLeft: theme.spacing.unit,
@@ -116,7 +122,7 @@ class HexQuiz extends React.Component {
               <div>
                 <TextField
                   id={index}
-                  autoFocus={index === 0}
+                  autoFocus={index === -1}
                   label={instructions}
                   className={styling}
                   value={this.state.nums[index].ans}

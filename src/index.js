@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HexQuiz from "./HexQuiz";
+import App from "./App.js";
+import DoorOne from "./DoorOne.js";
 
-ReactDOM.render(<HexQuiz />, document.querySelector("#root"));
+ReactDOM.render(<App />, document.querySelector("#root"));
