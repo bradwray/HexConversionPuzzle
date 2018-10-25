@@ -6,9 +6,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
-import HexQuiz from "./HexQuiz";
-import bg1 from "./bg1.jpg";
-import bg2 from "./bg6.jpg";
+import HexToBinary from "./HexToBinary.js";
+import bg1 from "./bg9.jpg";
+import bg2 from "./bg8.jpg";
 
 const styles = {
   appBar: {
@@ -30,7 +30,7 @@ function Transition(props) {
   return <Slide direction={directions[pic]} {...props} />;
 }
 
-class DoorOne extends React.Component {
+class DoorTwo extends React.Component {
   state = {
     open: false
   };
@@ -38,14 +38,13 @@ class DoorOne extends React.Component {
   componentWillMount = () => {
     setTimeout(() => {
       this.setState({ open: true });
-    }, 1500);
+    }, 500);
   };
 
   handleClose = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
-    }, 500);
   };
 
   render() {
@@ -62,7 +61,7 @@ class DoorOne extends React.Component {
             <Toolbar />
           </AppBar>
           <div className={classes.body}>
-            <HexQuiz complete={this.handleClose} />
+            <HexToBinary complete={this.handleClose} />
           </div>
         </Dialog>
       </div>
@@ -70,8 +69,8 @@ class DoorOne extends React.Component {
   }
 }
 
-DoorOne.propTypes = {
+DoorTwo.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(DoorOne);
+export default withStyles(styles)(DoorTwo);

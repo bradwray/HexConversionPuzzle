@@ -6,9 +6,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
-import HexQuiz from "./HexQuiz";
-import bg1 from "./bg1.jpg";
-import bg2 from "./bg6.jpg";
+import DecToBinary from "./DecToBinary.js";
+import bg1 from "./bg4.jpg";
+import bg2 from "./bg9.jpg";
 
 const styles = {
   appBar: {
@@ -20,6 +20,10 @@ const styles = {
   },
   body: {
     backgroundImage: `url(${bg2})`
+  },
+  puzzle: {
+    marginRight: "auto",
+    marginLeft: "auto"
   }
 };
 
@@ -38,14 +42,13 @@ class DoorOne extends React.Component {
   componentWillMount = () => {
     setTimeout(() => {
       this.setState({ open: true });
-    }, 1500);
+    }, 2000);
   };
 
   handleClose = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
-    }, 500);
   };
 
   render() {
@@ -62,7 +65,10 @@ class DoorOne extends React.Component {
             <Toolbar />
           </AppBar>
           <div className={classes.body}>
-            <HexQuiz complete={this.handleClose} />
+            <DecToBinary
+              className={classes.puzzle}
+              complete={this.handleClose}
+            />
           </div>
         </Dialog>
       </div>

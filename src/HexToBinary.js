@@ -13,7 +13,7 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     marginTop: "100px",
-    width: "100%",
+
     maxWidth: "349px",
     marginRight: "auto",
     marginLeft: "auto",
@@ -43,7 +43,7 @@ const styles = theme => ({
   }
 });
 
-class HexQuiz extends React.Component {
+class HexToBinary extends React.Component {
   state = {
     answer: " ",
     nums: []
@@ -53,14 +53,18 @@ class HexQuiz extends React.Component {
     let tempArr = [];
     let number;
     for (let i = 0; i < 9; i++) {
-      number = Math.floor(Math.random() * 15);
+      number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"][
+        Math.floor(Math.random() * 16)
+      ];
       while (
         number > 15 ||
         tempArr.some(item => {
           return number === item.num;
         })
       ) {
-        number = Math.floor(Math.random() * 15 + 9);
+        number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"][
+          Math.floor(Math.random() * 16)
+        ];
       }
       tempArr[i] = {
         num: number,
@@ -82,23 +86,21 @@ class HexQuiz extends React.Component {
 
   checkIt = (guess, index) => {
     let tempArr = this.state.nums;
-    if (tempArr[index].num === 15 && (guess === "f" || guess === "F")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num === 14 && (guess === "e" || guess === "E")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num === 13 && (guess === "d" || guess === "D")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num === 12 && (guess === "c" || guess === "C")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num === 11 && (guess === "b" || guess === "B")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num === 10 && (guess === "a" || guess === "A")) {
-      tempArr[index].correct = true;
-    } else if (tempArr[index].num <= 9 && tempArr[index].num == guess) {
+    if (
+      guess ===
+        parseInt(tempArr[index].num, 16)
+          .toString(2)
+          .padStart(4, "0") ||
+      guess ===
+        parseInt(tempArr[index].num, 16)
+          .toString(2)
+          .padStart(8, "0")
+    ) {
       tempArr[index].correct = true;
     } else {
       tempArr[index].correct = false;
     }
+
     this.setState({
       nums: tempArr
     });
@@ -123,7 +125,7 @@ class HexQuiz extends React.Component {
       <div className={classes.root}>
         <form className={classes.container} noValidate autoComplete="off">
           {this.state.nums.map((item, index) => {
-            let instructions = item.num + " to hex";
+            let instructions = item.num + " to bin";
             let styling;
             if (this.state.nums[index].correct === false)
               styling = classes.textFieldWrong;
@@ -151,8 +153,8 @@ class HexQuiz extends React.Component {
   }
 }
 
-HexQuiz.propTypes = {
+HexToBinary.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(HexQuiz);
+export default withStyles(styles)(HexToBinary);

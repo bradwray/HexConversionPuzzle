@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import babyDucks from "./babyDucks.gif";
 import DoorOne from "./DoorOne.js";
+import DoorTwo from "./DoorTwo.js";
+import DoorThree from "./DoorThree.js";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -21,7 +23,10 @@ class App extends React.Component {
     const { classes } = this.props;
     return (
       <div>
+        {/**/}
         <img className={classes.ducks} src={babyDucks} />
+        <DoorThree />
+        <DoorTwo />
         <DoorOne />
       </div>
     );
