@@ -1,5 +1,5 @@
 
-A simple decimal to hexidecimal conversion puzzle game to be used with AP Computer Science Principles classes. 
+A simple binary to decimal to hexidecimal conversion puzzle game to be used with AP Computer Science Principles classes. 
 
 
 
