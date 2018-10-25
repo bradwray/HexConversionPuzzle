@@ -20,6 +20,10 @@ const styles = {
   },
   body: {
     backgroundImage: `url(${bg2})`
+  },
+  puzzle: {
+    marginRight: "auto",
+    marginLeft: "auto"
   }
 };
 
@@ -61,7 +65,10 @@ class DoorOne extends React.Component {
             <Toolbar />
           </AppBar>
           <div className={classes.body}>
-            <DecToBinary complete={this.handleClose} />
+            <DecToBinary
+              className={classes.puzzle}
+              complete={this.handleClose}
+            />
           </div>
         </Dialog>
       </div>
