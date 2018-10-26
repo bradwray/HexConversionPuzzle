@@ -40,9 +40,9 @@ class DoorOne extends React.Component {
   };
 
   componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ open: true });
-    }, 2000);
+        setTimeout(() => {
+        this.setState({ open: true });
+      }, this.props.openTime);
   };
 
   handleClose = () => {
