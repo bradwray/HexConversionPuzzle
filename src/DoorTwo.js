@@ -36,9 +36,9 @@ class DoorTwo extends React.Component {
   };
 
   componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ open: true });
-    }, 500);
+        setTimeout(() => {
+        this.setState({ open: true });
+      }, this.props.openTime);
   };
 
   handleClose = () => {

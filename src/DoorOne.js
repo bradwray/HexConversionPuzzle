@@ -27,18 +27,26 @@ function Transition(props) {
   let directions = ["right", "left", "up", "down"];
   let pic = Math.floor(Math.random() * 3);
   console.log(pic);
-  return <Slide direction={directions[pic]} {...props} />;
+  let times = {
+    //can't figure out how to slow it down
+    enter: 5000,
+    exit: 2000
+  };
+  return <Slide timeout={times} direction={directions[pic]} {...props} />;
 }
 
 class DoorOne extends React.Component {
   state = {
     open: false
-  };
+  }
 
   componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ open: true });
-    }, 1500);
+
+        setTimeout(() => {
+        this.setState({ open: true });
+      }, this.props.openTime);
+    
+
   };
 
   handleClose = () => {
@@ -49,6 +57,7 @@ class DoorOne extends React.Component {
   };
 
   render() {
+    console.log(this.props)
     const { classes } = this.props;
     return (
       <div>
