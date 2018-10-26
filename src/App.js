@@ -15,7 +15,10 @@ const styles = {
 };
 
 class App extends React.Component {
-  state = {};
+  state = {
+    doorTimer: [1000, 1700, 2400],
+    developing: true
+  };
 
   componentWillMount = () => {};
 
@@ -25,9 +28,15 @@ class App extends React.Component {
       <div>
         {/**/}
         <img className={classes.ducks} src={babyDucks} />
-        <DoorThree />
-        <DoorTwo />
-        <DoorOne />
+        <DoorThree 
+        developing={this.state.developing}
+        openTime={this.state.doorTimer[2]}/>
+        <DoorTwo 
+        developing={this.state.developing} 
+        openTime={this.state.doorTimer[1]}/>
+        <DoorOne 
+        developing={this.state.developing} 
+        openTime={this.state.doorTimer[0]}/>
       </div>
     );
   };
