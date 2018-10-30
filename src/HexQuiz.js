@@ -117,7 +117,7 @@ class HexQuiz extends React.Component {
   render() {
     let { classes } = this.props;
     let backgroundColor = "#f00";
-    console.log(this.state);
+
     this.allCorrect();
     return (
       <div className={classes.root}>

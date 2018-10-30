@@ -36,9 +36,11 @@ class DoorTwo extends React.Component {
   };
 
   componentWillMount = () => {
+
         setTimeout(() => {
         this.setState({ open: true });
       }, this.props.openTime);
+
   };
 
   handleClose = () => {
@@ -61,6 +63,7 @@ class DoorTwo extends React.Component {
             <Toolbar />
           </AppBar>
           <div className={classes.body}>
+            2
             <HexToBinary complete={this.handleClose} />
           </div>
         </Dialog>

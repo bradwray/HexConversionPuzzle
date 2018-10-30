@@ -40,9 +40,12 @@ class DoorOne extends React.Component {
   };
 
   componentWillMount = () => {
-        setTimeout(() => {
-        this.setState({ open: true });
-      }, this.props.openTime);
+
+    setTimeout(() => {
+      this.setState({ open: true });
+    }, this.props.openTime);
+
+
   };
 
   handleClose = () => {
@@ -65,6 +68,7 @@ class DoorOne extends React.Component {
             <Toolbar />
           </AppBar>
           <div className={classes.body}>
+            3
             <DecToBinary
               className={classes.puzzle}
               complete={this.handleClose}
