@@ -52,23 +52,28 @@ function Transition(props) {
 class DoorOne extends React.Component {
   state = {
     open: false
-  };
+  }
 
   componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ open: true });
-    }, this.props.openTime);
+
+
+        setTimeout(() => {
+        this.setState({ open: true });
+      }, this.props.openTime);
+    
+
+
   };
 
   handleClose = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
+    }, 500);
   };
 
   render() {
-    console.log("door props");
-    console.log(this.props.puzzle);
+
     const { classes } = this.props;
     return (
       <div>
