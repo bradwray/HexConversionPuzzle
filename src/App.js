@@ -5,6 +5,9 @@ import DoorOne from "./DoorOne.js";
 import DoorTwo from "./DoorTwo.js";
 import DoorThree from "./DoorThree.js";
 import DecToBinary from "./DecToBinary.js";
+import HexQuiz from "./HexQuiz";
+import Colors from "./Colors";
+import HexToBinary from "./HexToBinary";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -16,7 +19,28 @@ const styles = {
 };
 
 class App extends React.Component {
-  state = {};
+  state = {
+    //wrap each one of these in a generic door component that can generate a random background
+    //this will help decrease code duplication
+    door: [
+      {
+        time: 2400,
+        open: false,
+        puzzle: <HexQuiz />
+      },
+      {
+        time: 1000,
+        open: false,
+        puzzle: <DecToBinary />
+      },
+      {
+        time: 700,
+        open: false,
+        puzzle: <HexToBinary />
+      }
+    ],
+    developing: true
+  };
 
   componentWillMount = () => {};
 
@@ -26,9 +50,9 @@ class App extends React.Component {
       <div>
         {/**/}
         <img className={classes.ducks} src={babyDucks} />
-        <DoorThree />
-        <DoorTwo />
-        <DoorOne />
+        <DoorThree openTime={this.state.door[2].time} />
+        <DoorTwo openTime={this.state.door[1].time} />
+        <DoorOne openTime={this.state.door[0].time} />
       </div>
     );
   };
