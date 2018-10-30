@@ -9,7 +9,7 @@
     "@material-ui/core": "latest"
   },
   "keywords": [],
-  "name": "freetheducks",
+  "name": "freetheducks-development-fork",
   "version": "0.0.8",
   "devDependencies": {
     "react-scripts": "1.0.0"
