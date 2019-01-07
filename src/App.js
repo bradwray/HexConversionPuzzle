@@ -69,18 +69,9 @@ class App extends React.Component {
       <div>
         {/**/}
         <img className={classes.ducks} src={babyDucks} />
-
-        {this.showDoors()}
-
-        <DoorThree 
-        developing={this.state.developing}
-        openTime={this.state.doorTimer[2]}/>
-        <DoorTwo 
-        developing={this.state.developing} 
-        openTime={this.state.doorTimer[1]}/>
-        <DoorOne 
-        developing={this.state.developing} 
-        openTime={this.state.doorTimer[0]}/>
+        <DoorThree openTime={this.state.door[1].time} />
+        <DoorTwo openTime={this.state.door[2].time} />
+        <DoorOne openTime={this.state.door[0].time} />
 
       </div>
     );
