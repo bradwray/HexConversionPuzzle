@@ -57,7 +57,6 @@ class HexToBinary extends React.Component {
         Math.floor(Math.random() * 16)
       ];
       while (
-        number > 15 ||
         tempArr.some(item => {
           return number === item.num;
         })
