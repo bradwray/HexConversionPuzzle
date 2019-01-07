@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
 import HexQuiz from "./HexQuiz";
 import bg1 from "./bg1.jpg";
-import bg2 from "./bg6.jpg";
+import bg2 from "./bg2.jpg";
 import bg3 from "./bg3.jpg";
 import bg4 from "./bg4.jpg";
 import bg5 from "./bg5.jpg";
@@ -31,14 +31,16 @@ const styles = {
     flex: 1
   },
   body: {
-    backgroundImage: `url(${bg2})`
+    width: "100%",
+    height: "100%",
+    backgroundImage: `url(${bg1})`
   }
 };
 
 function Transition(props) {
   let directions = ["right", "left", "up", "down"];
   let pic = Math.floor(Math.random() * 3);
-  console.log(pic);
+
   let times = {
     //can't figure out how to slow it down
     enter: 5000,
@@ -50,22 +52,28 @@ function Transition(props) {
 class DoorOne extends React.Component {
   state = {
     open: false
-  };
+  }
 
   componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ open: true });
-    }, this.props.openTime);
+
+
+        setTimeout(() => {
+        this.setState({ open: true });
+      }, this.props.openTime);
+    
+
+
   };
 
   handleClose = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
+    }, 500);
   };
 
   render() {
-    console.log(this.props);
+
     const { classes } = this.props;
     return (
       <div>
@@ -80,9 +88,7 @@ class DoorOne extends React.Component {
               Door #1
             </Typography>
           </AppBar>
-          <div className={classes.body}>
-            <HexQuiz complete={this.handleClose} />
-          </div>
+          <div className={classes.body}>{this.props.puzzle}</div>
         </Dialog>
       </div>
     );

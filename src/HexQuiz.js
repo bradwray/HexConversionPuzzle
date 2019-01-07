@@ -13,7 +13,7 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     marginTop: "100px",
-
+    width: "100%",
     maxWidth: "349px",
     marginRight: "auto",
     marginLeft: "auto",
@@ -117,7 +117,7 @@ class HexQuiz extends React.Component {
   render() {
     let { classes } = this.props;
     let backgroundColor = "#f00";
-    console.log(this.state);
+
     this.allCorrect();
     return (
       <div className={classes.root}>
